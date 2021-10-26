@@ -1,0 +1,66 @@
+<html>
+    <head>
+    <title>Produit</title>
+    <link rel="stylesheet" href="../../vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+        <script src="https://use.fontawesome.com/5b67370c4c.js"></script>
+    <link rel="stylesheet" href="../../bootstrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/loginc.css" class="css">
+    <link rel="stylesheet" href="../../css/style.css" class="css">
+    </head>
+    <body>
+   
+
+      <div class="container">
+      <div class="shadow-lg bg-white rounded testmarg">
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
+      <div class="text-center">
+      <a class="navbar-brand mr-1" href="index.php"><img style="width:180px" src="../style/img/innate.png" alt=""></a>
+          <h1>Ajouter un produit</h1>
+          </div>
+            <div class="form-group">
+            <label for="name"> Nom </label>
+            <input type="text" name="name" placeholder="" class="form-control" required> 
+            </div>
+
+            <div class="form-group">
+            <label for="price"> Prix </label>
+            <input type="number" name="price" placeholder=""  id="price" class="form-control" required>
+            <span class="text-danger"><?php if (isset($price_error)) echo $price_error; ?></span>  
+            </div>
+
+            <div class="form-group">
+                <label class="form-label-group" for="desc"> Description </label>
+                <textarea name="desc" id="desc" cols="60" rows="10" placeholder="Description"></textarea>
+                <span class="text-danger"><?php if (isset($desc_error)) echo $desc_error; ?></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label-group" for="type"> Type </label>
+                <select name="type" class="form-control" required>
+                    <option value="none" default> Choisir le type </option>
+                    <option value="cosmétique"> cosmétique</option>
+                    <option value="alimentaire"> alimentaire </option>
+                </select>
+                <span class="text-danger"><?php if (isset($type_error)) echo $type_error; ?></span>
+            </div>
+    
+            <div class="form-group">
+                <input type="file" class="form-controle" name="pic">
+            </div>
+            <span class="text-danger"><?php if (isset($file_error)) echo $file_error; ?></span>
+
+        <div>
+            <button  type="submit" name="submit" class="btn btn-primary btn-shadow btn-lg mt-3" >Valider</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            </form>
+      </div>
+      </div>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../style/vendor/jquery-easing/jquery.easing.min.js"></script>
+      <script src="../../bootstrap4/js/bootstrap.min.js"></script>
+            </body>
+</html>
